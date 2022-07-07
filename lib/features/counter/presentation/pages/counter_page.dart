@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:test1/features/counter/presentation/widgets/counter_widget.dart';
 
@@ -6,9 +8,13 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const CounterWidget(),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Center(child: Text('Counter')),
+        ),
+        body: const CounterWidget(),
+      ),
     );
   }
 }
